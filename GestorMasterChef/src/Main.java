@@ -36,12 +36,12 @@ Escribe 'FIN' para salir
     }
 
     private static void Ejercicio5() {
-        int contadorrojo = 0;
-        int contadorazul = 0;
+        int contador_rojo = 0;
+        int contador_azul = 0;
 
         try (BufferedReader rojo = new BufferedReader(new FileReader("cocina_roja.txt"))) {
             while (rojo.readLine() != null) {
-                contadorrojo++;
+                contador_rojo++;
             }
         } catch (IOException e) {
             System.out.println("No se ha podido leer el archivo cocina_roja.txt");
@@ -49,16 +49,16 @@ Escribe 'FIN' para salir
 
         try (BufferedReader azul = new BufferedReader(new FileReader("cocina_azul.txt"))) {
             while (azul.readLine() != null) {
-                contadorazul++;
+                contador_azul++;
             }
         } catch (IOException e) {
-            System.out.println("No se ha podido leer el archivo cocina_azul.txt");
+            System.out.println("No se ha podido lere el archivo cocina_azul.txt");
         }
 
         System.out.println("--- ESTADISTICAS ---");
-        System.out.println("Participantes en Cocina roja: " + contadorrojo);
-        System.out.println("Participantes en Cocina azul: " + contadorazul);
-        System.out.println("Total de participantes:  " + (contadorazul + contadorrojo));
+        System.out.println("Participantes en Cocina roja: " + contador_rojo);
+        System.out.println("Participantes en Cocina azul: " + contador_azul);
+        System.out.println("Total de participantes:  " + (contador_azul + contador_rojo));
     }
 
     private static void Ejercicio4() {
@@ -88,9 +88,9 @@ Escribe 'FIN' para salir
                 contenido.write(persona);
                 contenido.newLine();
             }
-            System.out.println("Se ha creado el archivo participantes.txt con " + personas.size() + " participantes ordenados alfabéticamente.");
+            System.out.println("Se ha creado el archivo participantes.txt con " + personas.size() + " participantes ordenados alfabeticamente.");
         } catch (IOException e) {
-            System.out.println("Error al escribir el archivo participantes.txt");
+            System.out.println("Error al crear el archivo participantes.txt");
         }
     }
 
@@ -103,7 +103,7 @@ Escribe 'FIN' para salir
             try (BufferedReader rojo = new BufferedReader(new FileReader("cocina_roja.txt"))) {
                 while ((linea = rojo.readLine()) != null) {
                     if (linea.equalsIgnoreCase(nom)) {
-                        System.out.println(linea + " Se encuentra en Rojo");
+                        System.out.println(linea + " Está en Rojo");
                     }
                 }
             } catch (IOException e) {
@@ -113,7 +113,7 @@ Escribe 'FIN' para salir
             try (BufferedReader azul = new BufferedReader(new FileReader("cocina_azul.txt"))) {
                 while ((linea = azul.readLine()) != null) {
                     if (linea.equalsIgnoreCase(nom)) {
-                        System.out.println(linea + " Se encuentra en Azul");
+                        System.out.println(linea + " Está en Azul");
                     }
                 }
             } catch (IOException e) {
